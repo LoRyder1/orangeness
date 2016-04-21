@@ -3,8 +3,8 @@ class ArticlesController < ApplicationController
     require 'redis'
     @redis = Redis.new
 
-    raise @redis.inspect
-    
+    raise @redis.ping
+
     @articles = Article.all
   end
 
