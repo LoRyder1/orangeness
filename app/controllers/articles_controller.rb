@@ -3,8 +3,8 @@ class ArticlesController < ApplicationController
     require 'redis'
     @redis = Redis.new
 
-    raise @redis.ping
-    @redis.set('foo', 'bar')
+    @redis.set('foo', [1,2,3].to_json)
+    raise @redis.get('foo')
 
     @articles = Article.all
   end
