@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
     @redis = Redis.new
 
     raise @redis.ping
+    @redis.set('foo', 'bar')
 
     @articles = Article.all
   end
