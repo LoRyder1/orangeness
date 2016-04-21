@@ -30,7 +30,17 @@ The OS and the disk
   1. snapshotting, and is a semi-persistent durability mode where the dataset is asynchronously transferred from memory to disk from time to time, written in RDB dump format.
   2. the safer version is AOF, an append-only file ( a journal) that is written as operations modifying the dataset in memory are processed. Redis is able to rewrite teh append-only file inthe background in order to avoid an indefinite growth of the journal.
 
+## Redis Sentinels
 
+The client table is able to perform automatic failovers by using Redis Sentinel.
+
+Redis Sentinel provides high availability for Redis. In practical terms this means that using Sentinel you can create a Redis deployment that resists without human intervention to certain kind of failures.
+
+Also provides other collateral tasks such as monitoring, notifications and acts as a configuration provider for clients. 
+  - Monitoring
+  - Notification
+  - Automatic failover
+  - Configuraiton provider
 
 
 
