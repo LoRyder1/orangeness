@@ -1,5 +1,10 @@
 class ArticlesController < ApplicationController
   def index
+    require 'redis'
+    @redis = Redis.new
+
+    raise @redis.inspect
+    
     @articles = Article.all
   end
 
