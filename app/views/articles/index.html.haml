@@ -1,6 +1,9 @@
 %h1 List of Articles
 = link_to 'New Article', new_article_path
 
+%h2
+= @redis.get('foo')
+
 %table
   %tr
     %th Title

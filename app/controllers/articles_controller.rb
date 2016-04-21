@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
     @redis = Redis.new
 
     @redis.set('foo', [1,2,3].to_json)
-    raise @redis.get('foo')
+    # raise @redis.get('foo')
 
     @articles = Article.all
   end
