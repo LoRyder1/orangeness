@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
   # attr_accessible :title
-  
+
   has_many :comments
   validates :title, presence: true, length: {minimum: 5}
   # validate :ensure_slug_uniqueness
@@ -11,7 +11,7 @@ class Article < ActiveRecord::Base
   end
 
   def to_param
-    "#{id}-#{title}"
+    "#{id}-#{slug}"
   end
 
   protected
