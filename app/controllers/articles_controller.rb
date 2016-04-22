@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  before_filter :find_article, :except => [:index, :new]
+  # before_filter :find_article, :except => [:index, :new]
 
   def index
     @articles = Article.all
