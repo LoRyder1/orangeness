@@ -13,6 +13,11 @@ class Slug
       redis.sadd(set(id), slug)
     end
 
+    def destroy(id)
+      redis.smembers(set(id)).each { |slug| redis.hdel(hash, slug) }
+      redis.del(set(id))
+    end
+
     private
 
     def redis
@@ -21,6 +26,10 @@ class Slug
 
     def hash
       "article_ids"
+    end
+
+    def set(id)
+      "article_slugs_#{id}"
     end
   end
 end

@@ -1,11 +1,8 @@
 class ArticlesController < ApplicationController
+
+  before_filter :find_article
+
   def index
-    require 'redis'
-    @redis = Redis.new
-
-    # @redis.set('foo', [1,2,3].to_json)
-    # raise @redis.get('foo')
-
     @articles = Article.all
   end
 
@@ -40,6 +37,18 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
     redirect_to articles_path
+  end
+
+  protected
+
+  def find_article
+    if id = Slug[params[:id]]
+      @article = Article.find(id)
+    else
+      @article = Article.find(params[:id])
+    end
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_url
   end
 
   private
