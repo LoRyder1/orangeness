@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
     require 'redis'
     @redis = Redis.new
 
-    @redis.set('foo', [1,2,3].to_json)
+    # @redis.set('foo', [1,2,3].to_json)
     # raise @redis.get('foo')
 
     @articles = Article.all

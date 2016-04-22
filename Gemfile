@@ -25,7 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'haml'
 
-gem 'redis', '~>3.2'
+gem 'redis'
+
+gem 'redis-namespace'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
