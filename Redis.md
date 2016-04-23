@@ -42,7 +42,10 @@ Also provides other collateral tasks such as monitoring, notifications and acts 
   - Automatic failover
   - Configuraiton provider
 
+#Using Redis as an LRU cache
 
+When Redis is used as a cache, sometimes it is handy to let it automatically evict old data as you add new one. THis behavior is very well known in the community of developers, since it is the default behavior of the popular memcached system. 
+LRU is actually only one of the supported eviction methods. THis page covers the more general topic of hte Redis maxmemory directive that is used in order to limit the memory usage to a fixed amount, and it also covers in depth the LRU algorithm used by Redis, that is actually an approximation of the exact LRU. 
 
 
 
